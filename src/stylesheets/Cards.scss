@@ -1,0 +1,100 @@
+@import "globals";
+
+/* Cards / Main
+============================
+*/
+.main-cards-bg {
+  margin-bottom: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: linear-gradient(95deg,  $secondary-clr 0%, $standout-clr 100%);
+}
+
+.alt-cards-bg {
+  background-color: $bg-clr;
+}
+
+.main-cards-board {
+  // background-color: $bg-clr;
+  // background-color: $primary-clr;
+  // background-color: $primary-clr;
+  // background: linear-gradient(90deg,  $secondary-clr 0%, $standout-clr 100%);
+  // background: linear-gradient(-90deg, $standout-clr 0%, #008552 100%);
+  width: 100%;
+  margin: 0 auto 0 auto;
+}
+
+.cards {
+  display: inline;
+  padding: 0;
+  // margin-top: 50px;
+}
+
+.cards li {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  max-width: 100%;
+  margin: 80px auto 40px auto;
+  border-bottom: solid 3px $secondary-clr;
+  text-align: left;
+  background-color: #FFFFFF;
+  /* background: url("./dark-triangles.png") repeat fixed; */
+}
+
+.cards li img {
+  width: 100%;
+  height: auto;
+}
+
+.cards li h2 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.7rem;
+  padding-left: 15px;
+  color: $accent-clr;
+  margin: 10px 0 20px 0;
+}
+
+.cards li h3 {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.3rem;
+  font-weight: 300;
+  padding-left: 15px;
+  color: $secondary-clr;
+  margin: 10px 0 20px 0;
+}
+
+.cards li p {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-weight: bold;
+  font-size: 1.05rem;
+  padding-left: 15px;
+  padding-right: 15px;
+  word-wrap: break-word;
+  color: $primary-clr;
+  margin: 10px 0 30px 0;
+  /* color: white; */
+}
+
+.article-lnk {
+  text-decoration: none;
+}
+
+/* .article-lnk:visited {
+  color: black;
+} */
+
+.cards li:hover {
+  box-shadow:  5px 5px 8px $primary-clr;
+  animation-name: tile-move;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  -webkit-animation-name: tile-move;
+  -webkit-animation-duration: 1s; 
+  -webkit-animation-timing-function: linear;
+}
+
+@keyframes tile-move {
+  0% {left: 0px; top: 0px;}
+  100% {left: 100px; top: 20px;}
+}
