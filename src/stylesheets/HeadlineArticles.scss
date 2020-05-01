@@ -4,9 +4,7 @@
 ============================
 */
 .headlines-container {
-  // background-color: $primary-clr;
   background-color: $bg-clr;
-  // background-color: #FFFFFF;
   padding-bottom: 15px;
 }
 
@@ -48,7 +46,7 @@
   list-style: none;
   /* grid-area: 3 / 2 / span 1 / span 5; */
   /* row-gap: 30px; */
-  column-gap: 8px;
+  // column-gap: 8px;
   max-width: 95%;
   // background: $accent-clr;
   // background: $primary-clr;
@@ -56,6 +54,14 @@
   margin: 80px auto 0 auto;
   padding: 0.2rem;
   justify-content: center;
+}
+
+.mini-headlines li {
+  padding-right: 10px;
+}
+
+.mini-headlines li:nth-child(5) {
+  padding-right: 0;
 }
 
 .mini-headlines img {
