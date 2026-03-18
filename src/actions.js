@@ -29,11 +29,12 @@ export const clearError = index =>
 
 export const getTopStories = () => dispatch => {
   const apiKey = '2d2509aeb33d472da6f8f1cc4c4aa211';
-  const topStoriesUrl = `https://newsapi.org/v2/top-headlines?sources=engadget&apiKey=`;
+  const topStoriesUrl = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=`;
 
   fetch(`${topStoriesUrl}${apiKey}`)
     .then(response => response.json())
     .then(topStories => {
+      console.log(topStories);
       dispatch({
         type: C.FETCH_TOPSTORIES,
         payload: topStories.articles

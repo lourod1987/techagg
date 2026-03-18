@@ -22,7 +22,7 @@ export default class ArticleContainer extends Component {
 
   componentDidMount() {
     const apiKey = '2d2509aeb33d472da6f8f1cc4c4aa211';
-    const topStoriesUrl = `https://newsapi.org/v2/top-headlines?sources=engadget&apiKey=`;
+    const topStoriesUrl = `https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=`;
 
     fetch(`${topStoriesUrl}${apiKey}`)
     .then(res => res.json())
@@ -33,7 +33,7 @@ export default class ArticleContainer extends Component {
     })
     // .catch( error => console.log(error.message))
 
-    fetch(`https://newsapi.org/v2/everything?sources=engadget&apiKey=${apiKey}`)
+    fetch(`https://newsapi.org/v2/everything?domains=techcrunch.com,engadget.com,wired.com&apiKey=${apiKey}`)
     .then(res => res.json())
     .then(data => {
       this.setState({
