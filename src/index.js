@@ -5,7 +5,7 @@ import './index.css';
 import App from './Components/ui/App';
 import * as serviceWorker from './serviceWorker';
 import storeFactory from './store';
-import { setArticle, addError, getTopStories } from './actions';
+import { getTopStories } from './actions';
 import { Provider } from 'react-redux';
 
 const initialState = (localStorage['redux-store']) ? JSON.parse(localStorage['redux-store']) :
