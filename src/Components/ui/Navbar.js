@@ -7,6 +7,7 @@ export default class Navbar extends Component {
     return (
       <header>
         <nav>
+        <a href="https://luisdev.netlify.app/" title="Back to Portfolio"><button id="backtohome">Back to Portfolio</button></a>
           <img src={logo} alt="site logo - green lightning symbol" className="nav-logo"/>
           <Link to="/" className="site-name">
             <h1>TechAgg</h1>

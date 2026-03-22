@@ -45,6 +45,9 @@ export default class HeadlineStories extends Component {
   }
 
   truncateStr = (str, lim) => {
+    if (str === false) {
+      return '';
+    }
     return str.length > lim ? str.slice(0, lim > 3 ? lim - 3 : lim) + '...' : str;
   }
 
@@ -60,7 +63,7 @@ export default class HeadlineStories extends Component {
             <div className="primary-headline">
               <Link to="/article" className="primary-head-lnk" onClick={() => goToArticle(i, "headline", null)}>
                 <img src={headlines[i].image_url} alt="" />
-                <h2>{this.truncateStr(headlines[i].title, 75)}</h2>
+                <h2>{headlines[i].title !== false ? this.truncateStr(headlines[i].title, 75) : ''}</h2>
               </Link>
             </div>
               <ul className="mini-headlines">

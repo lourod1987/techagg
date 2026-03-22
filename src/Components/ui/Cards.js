@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 const truncateStr = (str, lim, type) => {
+  if (str === false) {
+    return '';
+  }
   const ellipsis = type === 'description' ? '...READ MORE' : '...';
   return str.length > lim ? str.slice(0, lim > 3 ? lim - 3 : lim) + ellipsis : str;
 }
