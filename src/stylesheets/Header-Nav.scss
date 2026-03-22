@@ -130,4 +130,7 @@ header nav {
   border-radius: 15px;
   cursor: pointer;
   width: 157px;
+  @media (max-width: 1359px) {
+    display: none;
+  }
 }
