@@ -14,7 +14,7 @@ export default class Card extends Component {
               </a>
               <h2>{article.title || headlines.title}</h2>
               <h3>{article.source_name + (article.creator !== null ? ' - ' + article.creator : '') || headlines.source_name + (article.creator !== null ? ' - ' + article.creator : '')}</h3>
-              <p>{`${ article.description !== false ? article.decription : '' || headlines.description !== false ? headlines.description : '' }`}</p>
+              <p>{`${ article.description !== false ? article.description : '' || headlines.description !== false ? headlines.description : '' }`}</p>
             </li>
             <a href={article.link || headlines.link} target="_blank" rel="noopener noreferrer" className="external-lnk">
               <button className="external-btn" onClick={() => setFullArticle()}>View on {article.source_name}</button>
