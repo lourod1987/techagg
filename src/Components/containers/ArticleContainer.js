@@ -21,23 +21,25 @@ export default class ArticleContainer extends Component {
   }
 
   componentDidMount() {
-    const apiKey = '2d2509aeb33d472da6f8f1cc4c4aa211';
-    const topStoriesUrl = `https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=`;
+    const apiKey = 'pub_26a312d66e924d918acf218e1bd7b1ef';
+    const topStoriesUrl = `https://newsdata.io/api/1/latest?apikey=`;
 
-    fetch(`${topStoriesUrl}${apiKey}`)
+    fetch(`${topStoriesUrl}${apiKey}&country=us&category=technology&image=1&removeduplicate=1`)
     .then(res => res.json())
     .then(data => {
+      // console.log(`HEADLINES: ${JSON.stringify(data)}`);
       this.setState({
-        headlines: data.articles,
+        headlines: data.results,
       })
     })
     // .catch( error => console.log(error.message))
 
-    fetch(`https://newsapi.org/v2/everything?domains=techcrunch.com,engadget.com,wired.com&apiKey=${apiKey}`)
+    fetch(`${topStoriesUrl}${apiKey}&country=us&category=technology&image=1&removeduplicate=1`)
     .then(res => res.json())
     .then(data => {
+      console.log(`ARTICLES: ${JSON.stringify(data)}`);
       this.setState({
-        articles: data.articles,
+        articles: data.results,
       })
     })
     // .catch( error => console.log(error.message))
@@ -61,7 +63,7 @@ export default class ArticleContainer extends Component {
         index += 5;
         break;
       case "search":
-        for (let i = 0; i < this.state.fullList.length; i++){
+        for (let i = 0; i < this.state.fullList.length; i++) {
           if (this.state.fullList[i].title === title) {
             index = i;
             article = Object.assign({}, this.state.fullList[index]);
