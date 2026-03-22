@@ -22,7 +22,7 @@ export default class UserInfoPage extends Component {
                   <th>#</th>
                   <th>Article Title</th>
                   <th>Visited Article Page</th>
-                  <th>Seen Full Article on Engagdet</th>
+                  <th>Seen Full Article on Source Site</th>
                 </tr>
               </thead>
               <tbody>

@@ -44,6 +44,10 @@ export default class HeadlineStories extends Component {
     this.startAutoChange();
   }
 
+  truncateStr = (str, lim) => {
+    return str.length > lim ? str.slice(0, lim > 3 ? lim - 3 : lim) + '...' : str;
+  }
+
   render() {
     const { i } = this.state;
     const { headlines, goToArticle } = this.props;
@@ -56,7 +60,7 @@ export default class HeadlineStories extends Component {
             <div className="primary-headline">
               <Link to="/article" className="primary-head-lnk" onClick={() => goToArticle(i, "headline", null)}>
                 <img src={headlines[i].image_url} alt="" />
-                <h2>{headlines[i].title}</h2>
+                <h2>{this.truncateStr(headlines[i].title, 75)}</h2>
               </Link>
             </div>
               <ul className="mini-headlines">
