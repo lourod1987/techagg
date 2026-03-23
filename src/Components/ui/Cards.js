@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 const truncateStr = (str, lim, type) => {
-  if (str === false) {
+  if (str === null || str === undefined || str === false) {
     return '';
+  }
+  if (str.length <= lim) {
+    return str;
   }
   const ellipsis = type === 'description' ? '...READ MORE' : '...';
   return str.length > lim ? str.slice(0, lim > 3 ? lim - 3 : lim) + ellipsis : str;
@@ -20,7 +23,7 @@ export default class Cards extends Component {
               <li key={`${article.article_id}`} onClick={() => goToArticle(index, type, article.title)}>
                 <Link to="/article" className="article-lnk">
                   <img src={article.image_url} alt=""/>
-                  <h2>{truncateStr(article.title, 75, 'title')}</h2>
+                  <h2>{article.title !== false ? truncateStr(article.title, 75, 'title') : ''}</h2>
                   <h3 className="source">{`${article.source_name} ${ article.creator !== null ? ' - ' + article.creator : '' }`}</h3>
                   <p>{article.description !== false ? truncateStr(article.description, 200, 'description') : ''}</p>
                   {/* <p>{article.content}</p> */}

@@ -45,8 +45,11 @@ export default class HeadlineStories extends Component {
   }
 
   truncateStr = (str, lim) => {
-    if (str === false) {
+    if (str === null || str === undefined || str === false) {
       return '';
+    }
+    if (str.length <= lim) {
+      return str;
     }
     return str.length > lim ? str.slice(0, lim > 3 ? lim - 3 : lim) + '...' : str;
   }
@@ -70,7 +73,6 @@ export default class HeadlineStories extends Component {
               {headlines.map( (headlines, index) => (
                 <li key={headlines.article_id}>
                   <img src={headlines.image_url} alt="" className={ (i === index) ? "currentlySelected" : ""} onClick={() => this.handleClick(index)}/>
-                  {/* <h2>{headlines.title}</h2> */}
                 </li>
               ))}
               </ul>
