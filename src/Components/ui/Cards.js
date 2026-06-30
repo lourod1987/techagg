@@ -8,7 +8,7 @@ const truncateStr = (str, lim, type) => {
   if (str.length <= lim) {
     return str;
   }
-  const ellipsis = type === 'description' ? '...READ MORE' : '...';
+  const ellipsis = type === 'description' ? '...CLICK TO READ MORE' : '...';
   return str.length > lim ? str.slice(0, lim > 3 ? lim - 3 : lim) + ellipsis : str;
 }
 export default class Cards extends Component {
